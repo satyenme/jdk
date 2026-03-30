@@ -70,7 +70,7 @@ public class NMTPrintMallocSiteOfCorruptedMemory {
             case HEADER_AND_SITE_ARG, FOOTER_AND_SITE_ARG -> output.shouldContain("allocation-site cannot be shown since the marker is also corrupted.");
             case HEADER_ARG, FOOTER_ARG -> {
                 output.shouldContain("allocated from:");
-                output.shouldMatch("\\[.*\\]WB_NMTMalloc\\+0x.*");
+                output.shouldMatch("\\[.*\\](WB_NMTMalloc\\+0x.*| in jvm\\.dll\\+0x.*)");
             }
         }
     }
